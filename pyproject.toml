@@ -1,0 +1,73 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oravys"
+version = "0.1.0"
+description = "Voice deepfake detection SDK - analyze any audio in 5 lines of Python. 3000+ forensic engines. By Oravys Inc."
+readme = "README.md"
+license = "LicenseRef-Proprietary"
+requires-python = ">=3.9"
+authors = [
+    {name = "Eliot Cohen Bacrie", email = "contact@oravys.com"},
+]
+maintainers = [
+    {name = "Oravys Inc.", email = "contact@oravys.com"},
+]
+keywords = [
+    "deepfake",
+    "voice",
+    "detection",
+    "forensic",
+    "audio",
+    "AI",
+    "synthetic",
+    "speech",
+    "biometric",
+    "anti-fraud",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Multimedia :: Sound/Audio :: Analysis",
+    "Topic :: Security",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "httpx>=0.24.0",
+]
+
+[project.optional-dependencies]
+local = [
+    "scipy>=1.9.0",
+    "librosa>=0.10.0",
+]
+all = [
+    "scipy>=1.9.0",
+    "librosa>=0.10.0",
+    "soundfile>=0.12.0",
+]
+
+[project.scripts]
+oravys = "oravys.cli:main"
+
+[project.urls]
+Homepage = "https://oravys.com"
+Documentation = "https://docs.oravys.com"
+Repository = "https://github.com/oravys/oravys-detector"
+Issues = "https://github.com/oravys/oravys-detector/issues"
+"API Console" = "https://app.oravys.com"
+
+[tool.setuptools.packages.find]
+include = ["oravys*"]
