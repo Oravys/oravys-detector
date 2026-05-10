@@ -1,6 +1,8 @@
-# ORAVYS - Voice Deepfake Detection SDK
+# ORAVYS&trade; - Voice Deepfake Detection SDK
 
-Detect synthetic and cloned voices in 5 lines of Python. thousands of forensic engines.
+Detect synthetic and cloned voices in 5 lines of Python. Thousands of forensic engines.
+
+> ORAVYS&trade; is a trademark of Oravys Inc. (Delaware, USA). All rights reserved. INPI 25 5212037.
 
 ## Install
 
