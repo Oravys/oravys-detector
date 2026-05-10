@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "oravys"
 version = "0.1.0"
-description = "Voice deepfake detection SDK - analyze any audio in 5 lines of Python. 3000+ forensic engines. By Oravys Inc."
+description = "Voice deepfake detection SDK - analyze any audio in 5 lines of Python. thousands of forensic engines. By Oravys Inc."
 readme = "README.md"
 license = "LicenseRef-Proprietary"
 requires-python = ">=3.9"

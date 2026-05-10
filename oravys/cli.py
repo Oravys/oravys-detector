@@ -12,7 +12,7 @@ from pathlib import Path
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(
         prog="oravys",
-        description="ORAVYS - Voice deepfake detection. 3000+ engines.",
+        description="ORAVYS - Voice deepfake detection. thousands of engines.",
     )
     sub = parser.add_subparsers(dest="command")
 

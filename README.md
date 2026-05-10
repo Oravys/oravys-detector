@@ -1,6 +1,6 @@
 # ORAVYS - Voice Deepfake Detection SDK
 
-Detect synthetic and cloned voices in 5 lines of Python. 3000+ forensic engines.
+Detect synthetic and cloned voices in 5 lines of Python. thousands of forensic engines.
 
 ## Install
 
@@ -15,7 +15,7 @@ pip install oravys[local]
 
 ## Quick Start
 
-### API Mode (3000+ engines)
+### API Mode (thousands of engines)
 
 ```python
 from oravys import Detector
@@ -71,7 +71,7 @@ The local mode runs these lightweight DSP engines (CPU-only, no GPU needed):
 | breathiness | phonatory | Missing breath variation |
 | tremor | neuromotor | Missing natural vocal tremor |
 
-The full API mode runs 3000+ engines across 16 forensic domains.
+The full API mode runs thousands of engines across 16 forensic domains.
 
 ## Get an API Key
 

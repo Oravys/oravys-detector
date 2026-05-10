@@ -13,7 +13,7 @@ API_BASE = "https://api.oravys.com/v1"
 
 
 class Detector:
-    """Voice deepfake detector with 3000+ forensic engines.
+    """Voice deepfake detector with thousands of forensic engines.
 
     Parameters
     ----------
@@ -21,7 +21,7 @@ class Detector:
         API key for cloud analysis (full engine suite).
         Get yours at https://app.oravys.com/api-keys
     mode : str
-        "api" (default) uses the ORAVYS cloud with 3000+ engines.
+        "api" (default) uses the ORAVYS cloud with thousands of engines.
         "local" runs basic DSP engines locally (no network, ~12 engines).
     base_url : str, optional
         Override the API endpoint (for enterprise on-prem deployments).

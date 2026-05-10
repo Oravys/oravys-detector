@@ -1,0 +1,16 @@
+README.md
+pyproject.toml
+setup.py
+oravys/__init__.py
+oravys/cli.py
+oravys/detector.py
+oravys/result.py
+oravys.egg-info/PKG-INFO
+oravys.egg-info/SOURCES.txt
+oravys.egg-info/dependency_links.txt
+oravys.egg-info/entry_points.txt
+oravys.egg-info/requires.txt
+oravys.egg-info/top_level.txt
+oravys/engines/__init__.py
+oravys/engines/local_dsp.py
+tests/test_detector.py

@@ -1,0 +1,121 @@
+Metadata-Version: 2.4
+Name: oravys
+Version: 0.1.0
+Summary: Voice deepfake detection SDK - analyze any audio in 5 lines of Python. 3000+ forensic engines. By Oravys Inc.
+Author-email: Eliot Cohen Bacrie <contact@oravys.com>
+Maintainer-email: "Oravys Inc." <contact@oravys.com>
+License-Expression: LicenseRef-Proprietary
+Project-URL: Homepage, https://oravys.com
+Project-URL: Documentation, https://docs.oravys.com
+Project-URL: Repository, https://github.com/oravys/oravys-detector
+Project-URL: Issues, https://github.com/oravys/oravys-detector/issues
+Project-URL: API Console, https://app.oravys.com
+Keywords: deepfake,voice,detection,forensic,audio,AI,synthetic,speech,biometric,anti-fraud
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: Financial and Insurance Industry
+Classifier: Intended Audience :: Science/Research
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Classifier: Programming Language :: Python :: 3.12
+Classifier: Programming Language :: Python :: 3.13
+Classifier: Topic :: Multimedia :: Sound/Audio :: Analysis
+Classifier: Topic :: Security
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Requires-Python: >=3.9
+Description-Content-Type: text/markdown
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: httpx>=0.24.0
+Provides-Extra: local
+Requires-Dist: scipy>=1.9.0; extra == "local"
+Requires-Dist: librosa>=0.10.0; extra == "local"
+Provides-Extra: all
+Requires-Dist: scipy>=1.9.0; extra == "all"
+Requires-Dist: librosa>=0.10.0; extra == "all"
+Requires-Dist: soundfile>=0.12.0; extra == "all"
+
+# ORAVYS - Voice Deepfake Detection SDK
+
+Detect synthetic and cloned voices in 5 lines of Python. 3000+ forensic engines.
+
+## Install
+
+```bash
+pip install oravys
+```
+
+For local analysis with advanced DSP:
+```bash
+pip install oravys[local]
+```
+
+## Quick Start
+
+### API Mode (3000+ engines)
+
+```python
+from oravys import Detector
+
+det = Detector(api_key="sk-oravys-...")
+result = det.analyze("call_recording.wav")
+
+print(result.verdict)        # "SYNTHETIC" or "AUTHENTIC"
+print(result.confidence)     # 0.97
+print(result.engines_fired)  # 847
+```
+
+### Local Mode (offline, ~11 DSP engines)
+
+```python
+from oravys import Detector
+
+det = Detector(mode="local")
+result = det.analyze("voice.wav")
+
+print(result.is_synthetic)   # True/False
+print(result.confidence_pct) # "72.7%"
+```
+
+## CLI
+
+```bash
+# Local analysis
+oravys detect voice.wav --verbose
+
+# API analysis
+oravys detect voice.wav --api-key sk-oravys-... --json
+
+# Version
+oravys version
+```
+
+## Local Engines
+
+The local mode runs these lightweight DSP engines (CPU-only, no GPU needed):
+
+| Engine | Domain | What it detects |
+|--------|--------|-----------------|
+| silence_ratio | temporal | Unnatural silence patterns |
+| zero_crossing_rate | temporal | Synthetic signal characteristics |
+| spectral_flatness | spectral | Noise-like spectrum (codec artifacts) |
+| pitch_stability | prosodic | Unnaturally stable pitch (TTS signature) |
+| harmonic_noise_ratio | spectral | Overly clean harmonics |
+| spectral_bandwidth | spectral | Bandwidth consistency anomalies |
+| energy_contour | temporal | Robotic energy patterns |
+| formant_transition | articulatory | Missing natural articulation |
+| micro_pause | prosodic | Absence of natural hesitations |
+| breathiness | phonatory | Missing breath variation |
+| tremor | neuromotor | Missing natural vocal tremor |
+
+The full API mode runs 3000+ engines across 16 forensic domains.
+
+## Get an API Key
+
+Sign up at [app.oravys.com](https://app.oravys.com) to get your API key.
+
+## License
+
+Proprietary. Copyright (c) 2026 Oravys Inc. All rights reserved.

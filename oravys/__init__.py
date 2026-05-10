@@ -5,7 +5,7 @@
 ORAVYS - Voice deepfake detection in 5 lines of Python.
 ========================================================
 
-3000+ forensic engines. CPU-only. Works on any platform.
+thousands of forensic engines. CPU-only. Works on any platform.
 
 Quick start (API mode - recommended)::
 

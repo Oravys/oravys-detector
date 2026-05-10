@@ -2,7 +2,7 @@
 """Local DSP engines for offline analysis (no network required).
 
 These are lightweight, CPU-only engines that run basic acoustic forensics.
-For the full 3000+ engine suite, use API mode.
+For the full thousands of engines suite, use API mode.
 """
 
 from __future__ import annotations
