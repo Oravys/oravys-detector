@@ -61,7 +61,12 @@ class TestLocalAnalysis:
         result = det.analyze(wav)
 
         assert isinstance(result, AnalysisResult)
-        assert result.verdict in ("SYNTHETIC", "LIKELY_SYNTHETIC", "INCONCLUSIVE", "AUTHENTIC")
+        assert result.verdict in (
+            "SYNTHETIC",
+            "LIKELY_SYNTHETIC",
+            "INCONCLUSIVE",
+            "AUTHENTIC",
+        )
         assert 0 <= result.confidence <= 1
         assert result.engines_fired > 0
         assert result.sample_rate == 16000
@@ -122,13 +127,18 @@ class TestAnalysisResult:
 
     def test_summary(self):
         r = AnalysisResult(
-            is_synthetic=True, confidence=0.85, verdict="SYNTHETIC",
-            engines_fired=847, engines_total=3056,
+            is_synthetic=True,
+            confidence=0.85,
+            verdict="SYNTHETIC",
+            engines_fired=847,
+            engines_total=3056,
         )
         s = r.summary()
         assert "SYNTHETIC" in s
         assert "847" in s
 
     def test_repr(self):
-        r = AnalysisResult(is_synthetic=True, confidence=0.9, verdict="SYNTHETIC", engines_fired=10)
+        r = AnalysisResult(
+            is_synthetic=True, confidence=0.9, verdict="SYNTHETIC", engines_fired=10
+        )
         assert "SYNTHETIC" in repr(r)

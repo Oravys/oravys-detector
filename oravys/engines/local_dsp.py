@@ -31,7 +31,9 @@ def _load_wav(audio_bytes: bytes) -> tuple[np.ndarray, int]:
         if sampwidth == 2:
             samples = np.frombuffer(raw, dtype=np.int16).astype(np.float32) / 32768.0
         elif sampwidth == 4:
-            samples = np.frombuffer(raw, dtype=np.int32).astype(np.float32) / 2147483648.0
+            samples = (
+                np.frombuffer(raw, dtype=np.int32).astype(np.float32) / 2147483648.0
+            )
         else:
             raise ValueError(f"Unsupported sample width: {sampwidth}")
     except wave.Error:
@@ -260,7 +262,11 @@ def _engine_energy_contour(samples: np.ndarray, sr: int) -> EngineResult:
     hop = int(0.010 * sr)
     energies = []
     for i in range(0, len(samples) - frame_len, hop):
-        chunk = samples[i * hop : i * hop + frame_len] if i == 0 else samples[i : i + frame_len]
+        chunk = (
+            samples[i * hop : i * hop + frame_len]
+            if i == 0
+            else samples[i : i + frame_len]
+        )
         energies.append(float(np.sum(chunk**2)))
 
     if len(energies) < 10:

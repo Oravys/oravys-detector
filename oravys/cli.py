@@ -21,11 +21,18 @@ def main(argv: list[str] | None = None) -> int:
     p_detect.add_argument("audio", type=str, help="Path to audio file")
     p_detect.add_argument("--api-key", "-k", type=str, help="API key for cloud mode")
     p_detect.add_argument(
-        "--mode", "-m", choices=["api", "local"], default="local",
+        "--mode",
+        "-m",
+        choices=["api", "local"],
+        default="local",
         help="Analysis mode (default: local)",
     )
-    p_detect.add_argument("--json", action="store_true", dest="as_json", help="Output JSON")
-    p_detect.add_argument("--verbose", "-v", action="store_true", help="Show per-engine results")
+    p_detect.add_argument(
+        "--json", action="store_true", dest="as_json", help="Output JSON"
+    )
+    p_detect.add_argument(
+        "--verbose", "-v", action="store_true", help="Show per-engine results"
+    )
 
     # version
     sub.add_parser("version", help="Show version")
@@ -34,6 +41,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "version":
         from oravys import __version__
+
         print(f"oravys {__version__}")
         return 0
 
@@ -99,7 +107,9 @@ def _cmd_detect(args: argparse.Namespace) -> int:
             print("  Per-engine results:")
             for e in result.engine_results:
                 marker = "!" if e.label == "SUSPICIOUS" else " "
-                print(f"  {marker} [{e.domain:>14}] {e.name:<25} {e.label:<20} {e.detail}")
+                print(
+                    f"  {marker} [{e.domain:>14}] {e.name:<25} {e.label:<20} {e.detail}"
+                )
 
     return 0
 
