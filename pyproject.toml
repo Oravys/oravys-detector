@@ -4,10 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "oravys"
-version = "0.1.2"
-description = "ORAVYS - Voice deepfake detection SDK. Calls the hosted ORAVYS API (3000+ forensic engines) by default. Includes an experimental local DSP probe (11 engines, high false-negative rate, not for production). ORAVYS is a trademark of Oravys Inc."
+version = "0.2.0"
+description = "ORAVYS - Voice deepfake detection SDK. Calls the hosted ORAVYS API (3000+ forensic engines) by default. Includes an experimental local DSP probe (11 engines, high false-negative rate, not for production). Source-available under BUSL-1.1; auto-converts to Apache-2.0 on 2029-05-11. ORAVYS is a trademark of Oravys Inc."
 readme = "README.md"
-license = "LicenseRef-Proprietary"
+license = "BUSL-1.1"
 requires-python = ">=3.9"
 authors = [
     {name = "Eliot Cohen Bacrie", email = "contact@oravys.com"},
