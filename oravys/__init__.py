@@ -34,7 +34,7 @@ import sys as _sys
 from oravys.detector import Detector
 from oravys.result import AnalysisResult
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 __author__ = "Eliot Cohen Bacrie"
 __license__ = "Proprietary"
 __url__ = "https://oravys.com"
